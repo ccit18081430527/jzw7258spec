@@ -103,11 +103,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">概述</h1>
+                <h1 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>JZW7258核心便是基于LCD屏幕显示用户需要的UI界面，首先就要确定的是硬件层面的屏幕与开发板的驱动能力，二者是否相匹配，以及对屏幕性能来讲如何可以通过开发板提升。本篇以3.5寸RGB屏幕作为示例进行详细说明，如何驱动屏幕并显示界面。
 对于LCD来讲，可分为RGB型、MCU型、SPI型，SDK中间件层有针对各种类型的适配说明，常规选择RGB型。</p>
-<h2 id="_2">屏幕驱动文件说明</h2>
-<h2 id="rgb">RGB屏幕驱动</h2>
+<h2 id="_2">屏幕驱动文件说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="rgb">RGB屏幕驱动<a class="headerlink" href="#rgb" title="Permanent link">&para;</a></h2>
 <ul>
 <li>id: st7365，可在中间件层找到对应型号的文件-lcd_st7365.c，3.5A部分</li>
 <li>型号：RGB型SPI接口，RGB888输出格式</li>
@@ -116,17 +116,17 @@
 <li>SPI参数初始化
 通过 lcd_device_t 结构体对屏幕参数进行初始化设置，主函数里lcd_open也是通过这里进行屏幕适配选择。</li>
 </ul>
-<h2 id="rgbrgb888">RGB接口显示RGB888数据</h2>
+<h2 id="rgbrgb888">RGB接口显示RGB888数据<a class="headerlink" href="#rgbrgb888" title="Permanent link">&para;</a></h2>
 <ul>
 <li>上述步骤完成后，进行注册中断函数，调用bk_lcd_isr_register() 函数，在 open_lcd的接口中已对此进行了处理，用户无需关注。</li>
 <li>以jzw7258项目为例，目录下widgets_main.c文件中，如下是对屏幕型号的选择，当用户需要更换其它屏幕在此处修改，当然，对应屏幕驱动文件中（lcd_st7365.c）也要进行相应的参数修改。</li>
 </ul>
-<pre><code class="language-plantuml">const lcd_open_t lcd_open =
-{
-    .device_ppi = PPI_320X480,
-    .device_name = &quot;st7365&quot;,
-};
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">lcd_open_t</span><span class="w"> </span><span class="n">lcd_open</span><span class="w"> </span><span class="o">=</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="o">.</span><span class="n">device_ppi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PPI_320X480</span><span class="p">,</span>
+<span class="w">    </span><span class="o">.</span><span class="n">device_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;st7365&quot;</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
               
             </div>
           </div><footer>
