@@ -3,7 +3,7 @@ site_url: https://github.com/cit18081430527/jzw7258spec.github.io
 site_author: 技术文档团队
 site_dir: docs-site
 theme:
-  name: readthedocs
+  name: material
   #readthedocs # material #rtd-dropdown #ivory #gitbook
   # custom_dir: overrides
   # collapse_by_default: false
