@@ -1,0 +1,20 @@
+/* @import url('https://static.zeoseven.com/zsft/292/main/result.css'); */
+
+body {
+font-family: "LXGW WenKai", sans-serif;
+font-weight: normal;
+}
+/* 在 overrides/css/extra.css */
+:root {
+  --md-primary-fg-color: #A68064;
+  --md-accent-fg-color: #00bcd4;
+  --md-code-font: "LXGW WenKai"
+}
+
+/* .md-header {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   }
+   /* 代码块样式 */
+/* .highlight .n, .highlight .p {
+    color: #d63384;
+  } */ 
